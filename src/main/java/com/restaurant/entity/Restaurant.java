@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.Instant;
+
 @Entity
 @Table(name = "restaurant")
 @Data
@@ -18,4 +20,7 @@ public class Restaurant {
     String name;
     @Column(columnDefinition = "TEXT[]")
     String[] serviceAblePincode;
+
+    @Column
+    Instant createdOn;
 }

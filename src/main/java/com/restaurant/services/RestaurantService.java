@@ -2,13 +2,12 @@ package com.restaurant.services;
 
 import com.restaurant.entity.Restaurant;
 import com.restaurant.repositories.RestaurantRepository;
-import jakarta.servlet.http.Cookie;
-import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.Optional;
 
 @Service
@@ -17,6 +16,7 @@ public class RestaurantService {
     private RestaurantRepository restaurantRepository;
 
     public Restaurant createRestaurant(Restaurant restaurant) {
+        restaurant.setCreatedOn(new Date().toInstant());
         return restaurantRepository.save(restaurant);
     }
 

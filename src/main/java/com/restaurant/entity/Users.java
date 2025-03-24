@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Table(name = "users")
 @Data
@@ -16,4 +18,10 @@ public class Users {
     Long id;
 
     String name;
+
+    @OneToMany(mappedBy = "users", cascade = CascadeType.ALL, orphanRemoval = true)
+    List<Task> favourateList;
+
+    @Column(columnDefinition = "TEXT[]")
+    String[] roles;
 }
