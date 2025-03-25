@@ -18,12 +18,16 @@ public class UserServices {
     @Transactional
     public Users saveUser(Users user){
         System.out.println("user is "+ user);
-//        Users save = userRepository.save(user);
 
-        user.getFavourateList().forEach((task) -> {
-            task.setUsers(user);
-        });
-        taskRepository.saveAll(user.getFavourateList());
+        if(user.getTasksList() != null) {
+            user.getTasksList().forEach((task) -> {
+                task.setUsers(user);
+            });
+            taskRepository.saveAll(user.getTasksList());
+        }
+        else {
+            Users save = userRepository.save(user);
+        }
 
         return user;
     }

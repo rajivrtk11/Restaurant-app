@@ -20,7 +20,7 @@ public class Users {
     String name;
 
     @OneToMany(mappedBy = "users", cascade = CascadeType.ALL, orphanRemoval = true)
-    List<Task> favourateList;
+    List<Task> tasksList;
 
     @Column(columnDefinition = "TEXT[]")
     String[] roles;

@@ -21,12 +21,12 @@ public class TaskService {
         return taskRepository.save(task);
     }
 
+    @Transactional
     public void markfavourite(Long id) {
         Optional<Task> byId = taskRepository.findById(id);
         if(byId.isEmpty()) throw new IllegalArgumentException("Task with given id not exist");
 
         Task task = byId.get();
-        Users users = task.getUsers();
-        users.getFavourateList().add(task);
+        task.setIsFavourite(true);
     }
 }
