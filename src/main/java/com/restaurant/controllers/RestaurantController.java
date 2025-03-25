@@ -4,6 +4,7 @@ import com.restaurant.entity.Restaurant;
 import com.restaurant.services.RestaurantService;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletResponse;
+import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -13,8 +14,8 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/restaurant")
+@Data
 public class RestaurantController {
-    @Autowired
     private RestaurantService restaurantService;
 
     @PostMapping("/create")

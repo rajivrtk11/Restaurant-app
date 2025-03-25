@@ -28,6 +28,7 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok:1.18.30'
 	testImplementation 'org.mockito:mockito-core:5.11.0'
 	implementation 'org.apache.poi:poi-ooxml:5.2.3'
+	implementation 'org.apache.pdfbox:pdfbox:2.0.30'
 }
 
 tasks.named('test') {
