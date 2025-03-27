@@ -1,11 +1,17 @@
 package com.restaurant.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "sales_report")
 @Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class SalesReport {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
