@@ -11,7 +11,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-public class UserServicesTest {
+public class  UserServicesTest {
 
     @Mock
     private UserRepository userRepository;
