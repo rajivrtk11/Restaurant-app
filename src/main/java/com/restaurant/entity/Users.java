@@ -24,4 +24,9 @@ public class Users {
 
     @Column(columnDefinition = "TEXT[]")
     String[] roles;
+
+    public Users(Long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 }

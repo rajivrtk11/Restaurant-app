@@ -23,4 +23,10 @@ public class Restaurant {
 
     @Column
     Instant createdOn;
+
+    public Restaurant(Long id, String name, String[] serviceAblePincode) {
+        this.name = name;
+        this.id = id;
+        this.serviceAblePincode = serviceAblePincode;
+    }
 }
