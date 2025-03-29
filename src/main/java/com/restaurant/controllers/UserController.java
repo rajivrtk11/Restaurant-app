@@ -2,6 +2,7 @@ package com.restaurant.controllers;
 
 import com.restaurant.entity.Users;
 import com.restaurant.services.UserServices;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,7 +18,7 @@ public class UserController {
     private UserServices userServices;
 
     @PostMapping("/create")
-    public Users createUser(@RequestBody Users users) {
+    public Users createUser(@RequestBody @Valid Users users) {
         return userServices.saveUser(users);
     }
 }
