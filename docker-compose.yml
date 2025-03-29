@@ -20,6 +20,8 @@ services:
       SPRING_DATASOURCE_URL: jdbc:postgresql://pgsqldb:5432/todo-app-1
       SPRING_DATASOURCE_USERNAME: rajiv
       SPRING_DATASOURCE_PASSWORD: postgres
+      SPRING_SERVER_ADDRESS: 0.0.0.0
+
     ports:
       - "8080:8080"
     depends_on:
