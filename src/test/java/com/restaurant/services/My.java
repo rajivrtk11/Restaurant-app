@@ -19,9 +19,11 @@ public class My {
    @InjectMocks
    RestaurantService restaurantService;
 
+   Calculator cal;
    @BeforeEach
    void setUp() {
         MockitoAnnotations.openMocks(this);
+        cal = new Calculator();
    }
 
    @Test
@@ -38,7 +40,13 @@ public class My {
 
    @Test
    void testSum(){
-
+      assertEquals(cal.sum(2,3), 5);
    }
 
+}
+
+class Calculator {
+   public int sum(int a, int b) {
+      return a + b;
+   }
 }

@@ -1,34 +1,35 @@
 version: "3.9"
 
 services:
-  pgsqldb:
-    container_name: pgsqldb
-    image: postgres
-    environment:
-      POSTGRES_USER: rajiv
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: todo-app-1
-    networks:
-      springboot-mysql-net:
+#  pgsqldb:
+#    container_name: pgsqldb
+#    image: postgres
+#    environment:
+#      POSTGRES_USER: rajiv
+#      POSTGRES_PASSWORD: postgres
+#      POSTGRES_DB: todo-app-1
+#    networks:
+#      springboot-mysql-net:
 
   springboot-restful-webservices:
     container_name: springboot-restful-webservices
-    build:
-      context: ./
-      dockerfile: Dockerfile
+#    build:
+#      context: ./
+#      dockerfile: Dockerfile
+    image: rajivrtk01/my-test-repo-1:1.1.0
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://pgsqldb:5432/todo-app-1
+      SPRING_DATASOURCE_URL: jdbc:postgresql://host.docker.internal:5432/todo-app-1
       SPRING_DATASOURCE_USERNAME: rajiv
       SPRING_DATASOURCE_PASSWORD: postgres
       SPRING_SERVER_ADDRESS: 0.0.0.0
 
     ports:
       - "8080:8080"
-    depends_on:
-      - pgsqldb
-    networks:
-      springboot-mysql-net:
+#    depends_on:
+#      - pgsqldb
+#    networks:
+#      springboot-mysql-net:
     restart: on-failure
 
-networks:
-  springboot-mysql-net:
+#networks:
+#  springboot-mysql-net:

@@ -12,7 +12,7 @@ COPY src src
 # Give execution permission to the Gradle Wrapper
 RUN chmod +x gradlew
 
-# Build the application without running tests
+# Build the application without running testapps
 RUN ./gradlew build -x test
 
 # Step 2: Create the final image
